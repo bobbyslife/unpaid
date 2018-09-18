@@ -37,6 +37,7 @@ body {
 .description {
   display: block;
   width: 600px;
+  max-width: 100%;
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   text-align: center;
 }
@@ -55,6 +56,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -71,19 +73,14 @@ body {
 }
 
 .heading {
+  display: none;
   color: rgba(51, 51, 51, .05);
   text-align: justify;
 }
 
 .div-block-2 {
-  position: static;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: visible;
+  display: block;
   width: 100%;
-  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -101,18 +98,19 @@ body {
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
   flex: 0 auto;
+  text-align: center;
 }
 
 .image {
-  position: absolute;
-  width: 700px;
-  min-width: 200px;
+  width: 35vw;
+  max-width: auto;
 }
 
 .image._2 {
-  position: relative;
-  right: 10px;
-  bottom: 10px;
+  position: absolute;
+  -webkit-transform: translate(-0.5vw, -0.5vw);
+  -ms-transform: translate(-0.5vw, -0.5vw);
+  transform: translate(-0.5vw, -0.5vw);
 }
 
 .image._3 {
@@ -133,10 +131,7 @@ body {
 
 .section-2 {
   position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 100%;
   height: 100vh;
   -webkit-box-pack: center;
@@ -153,30 +148,78 @@ body {
 
 .word {
   width: 350px;
+  max-width: 80%;
 }
 
 .word-1 {
   width: 350px;
+  max-width: 80%;
 }
 
 .word-2 {
   width: 350px;
+  max-width: 80%;
 }
 
 .word-3 {
   width: 350px;
+  max-width: 80%;
 }
 
 .word-4 {
   width: 350px;
+  max-width: 80%;
 }
 
 .word-5 {
   width: 350px;
+  max-width: 80%;
 }
 
 .bold-text {
   text-align: center;
+}
+
+.background {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: url('../images/UNPAID_BG.png');
+  background-size: cover;
+  opacity: 0.7;
+}
+
+@media (max-width: 991px) {
+  .image {
+    width: 70vw;
+  }
+  .image._2 {
+    -webkit-transform: translate(-1vw, -1vw);
+    -ms-transform: translate(-1vw, -1vw);
+    transform: translate(-1vw, -1vw);
+  }
 }
 
 @media (max-width: 479px) {
@@ -195,9 +238,6 @@ body {
   }
   .div-block-2 {
     padding-left: 10px;
-  }
-  .image {
-    width: 250px;
   }
   .word {
     width: 250px;
